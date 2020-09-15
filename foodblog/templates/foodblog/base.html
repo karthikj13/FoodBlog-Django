@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+
+    <body>
+        <div>
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <br><hr><br>
+
+        <div>
+            <h3>This is my foodblog</h3>
+        </div>
+    </body>
+    
+</html>

@@ -1,0 +1,20 @@
+{% extends "foodblog/base.html" %}
+{% block title %}Share a Food{% endblock %}
+{% block content %}
+    {% if sent %}
+        <h1>E-mail successfully sent</h1>
+        <p>
+            "{{ food.title }}" was successfully sent.
+        </p>
+        <div>
+            <a href="{% url 'food_list' %}">Back to Home</a>
+        </div>
+    {% else %}
+        <h1>Share "{{ food.title }}" by e-mail</h1>
+        <form action="." method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Send e-mail">
+        </form>
+    {% endif %}
+{% endblock %}
